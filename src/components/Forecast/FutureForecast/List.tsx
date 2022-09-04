@@ -1,38 +1,30 @@
 import { FC } from 'react';
+
+// Components
+import FutureForecastItem from './Item';
+
+// Styles
 import forecastClasses from "../../../styles/Forecast.module.css";
 
-const FutureForecast: FC = () => {
+const FutureForecastList: FC<{ forecasts: any }> = ({ forecasts }) => {
+
+    const futureFiveForecasts: Array<any> = (forecasts?.data && forecasts?.data.length) ? (
+        forecasts?.data.slice(1, 6)
+    ) : [];
+
     return (
         <div className={forecastClasses.future_forecast_down}>
             <ul>
-                <li>
-                    <img src={require("../../../helpers/assets/rainy.png")} alt="icon" className="img-fluid" />
-                    <span className={forecastClasses.day}>Fri</span>
-                    <span className={forecastClasses.temperature}>15°C</span>
-                </li>
-                <li>
-                    <img src={require("../../../helpers/assets/rainy.png")} alt="icon" className="img-fluid" />
-                    <span className={forecastClasses.day}>Fri</span>
-                    <span className={forecastClasses.temperature}>15°C</span>
-                </li>
-                <li>
-                    <img src={require("../../../helpers/assets/rainy.png")} alt="icon" className="img-fluid" />
-                    <span className={forecastClasses.day}>Fri</span>
-                    <span className={forecastClasses.temperature}>15°C</span>
-                </li>
-                <li>
-                    <img src={require("../../../helpers/assets/rainy.png")} alt="icon" className="img-fluid" />
-                    <span className={forecastClasses.day}>Fri</span>
-                    <span className={forecastClasses.temperature}>15°C</span>
-                </li>
-                <li>
-                    <img src={require("../../../helpers/assets/rainy.png")} alt="icon" className="img-fluid" />
-                    <span className={forecastClasses.day}>Fri</span>
-                    <span className={forecastClasses.temperature}>15°C</span>
-                </li>
+                {
+                    futureFiveForecasts.length > 0 ? (
+                        futureFiveForecasts.map((item, index) => (
+                            <FutureForecastItem key={index} item={item} />
+                        ))
+                    ) : null
+                }
             </ul>
         </div>
     )
 }
 
-export default FutureForecast;
+export default FutureForecastList;

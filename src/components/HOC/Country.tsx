@@ -1,6 +1,10 @@
-import React, { FC } from 'react';
-import { CountryDropdown } from 'react-country-region-selector';
+import { FC } from 'react';
+
+// Models (Types)
 import { CountryProps } from '../../models/types/Country';
+
+// Country_Region_Library
+import { CountryDropdown } from 'react-country-region-selector';
 
 const Country: FC<CountryProps> = ({ country, selectedCountry, className }) => {
   return (
