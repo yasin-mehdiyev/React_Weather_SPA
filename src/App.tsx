@@ -1,28 +1,27 @@
-import React, { FC } from 'react';
-import Container from './components/Layout/Container';
-import Row from './components/Layout/Row';
-import Wrapper from './components/Layout/Wrapper';
-import WeatherForm from './components/WeatherForm';
-import classes from "./styles/Common.module.css";
+import React, { FC, Fragment, lazy, Suspense } from 'react';
+
+// React Routing Dom Library
+import { Route, Routes } from "react-router-dom";
+
+// Include App.css
+import './App.css';
+
+// Dashboard Page
+import ForecastPage from './pages/Home/Forecast';
+
+// Dynamic Imports(Code Splittings)
+const NotFoundPage = lazy(() => import("./pages/404/NotFound"));
 
 const App: FC = () => {
   return (
-    <Container>
-
-      <section className="form_weather mt-3">
-        <Row>
-          <div className="col-12">
-            <Wrapper>
-              <div className={classes.text_center}>
-                <h2 className={`${classes.margin_bottom} ${classes.font_weight}`}>Weather Application</h2>
-                <WeatherForm />
-              </div>
-            </Wrapper>
-          </div>
-        </Row>
-      </section>
-
-    </Container>
+    <Fragment>
+      <Suspense fallback={<><p>Loading....</p></>}>
+        <Routes>
+          <Route path="/" element={<ForecastPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </Fragment>
   )
 }
 

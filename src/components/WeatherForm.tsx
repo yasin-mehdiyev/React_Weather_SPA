@@ -3,8 +3,11 @@ import Country from './HOC/Country';
 import Region from './HOC/Region';
 import classes from "../styles/Select.module.css";
 import Button from './HOC/Button';
+import { useDispatch } from 'react-redux';
+import { fetchForecasts } from '../redux/features/forecast/forecastAction';
 
 const WeatherForm: FC = () => {
+    const dispatch = useDispatch<any>();
     const [country, setCountry] = useState<string>("");
     const [region, setRegion] = useState<string>("");
 
@@ -16,10 +19,11 @@ const WeatherForm: FC = () => {
         setRegion(val);
     };
 
-    const handleSearch = (e: any) => {
+    const handleSearch = async (e: any) => {
         e.preventDefault();
         console.log('country: ', country);
         console.log('region: ', region);
+        dispatch(fetchForecasts(region));
         setCountry("");
         setRegion("");
     }
