@@ -1,0 +1,128 @@
+
+/* Forecast Section - BEGIN */
+
+.forecast {
+    color: #fff;
+}
+
+/* Forecast Section - END */
+
+/* Today Forecast Section - BEGIN */
+
+.today_forecast {
+    position: relative;
+    width: 100%;
+    background-image: url("../helpers/assets/mountain.jpg");
+    background-size: cover;
+    min-height: 450px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(130deg, #72edf2 10%, #5151e5 100%);
+    background-size: cover;
+    border-radius: 8px;
+    opacity: 0.7;
+}
+
+.today_forecast_wrapper {
+    height: 100%;
+    padding: 30px;
+}
+
+.today_forecast_wrapper_up h3 {
+    font-size: 35px;
+}
+
+.today_forecast_wrapper_up .date {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.today_forecast_wrapper_up .location {
+    display: flex;
+}
+
+.today_forecast_wrapper_up .location img {
+    max-width: 25px;
+    max-height: 35px;
+}
+
+.today_forecast_wrapper_up .location span {
+    font-size: 23px;
+    margin-left: 6px;
+}
+
+.today_forecast_wrapper_down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Today Forecast Section - END */
+
+/* Today Forecast Detail Section - BEGIN */
+
+.forecast_right_side {
+    padding: 0px 30px;
+    height: 100%;
+}
+
+.forecast_right_side .forecast_right_wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.forecast_right_side .forecast_right_wrapper .forecast_detail_up ul li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.forecast_right_side .forecast_right_wrapper .forecast_detail_up ul li span:first-child {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Today Forecast Detail Section - END */
+
+/* Future Forecast Section - BEGIN */
+
+.future_forecast_down {
+    position: absolute;
+    bottom: 0;
+}
+
+.future_forecast_down ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.future_forecast_down ul li {
+    width: 15%;
+    text-align: center;
+}
+
+.future_forecast_down ul li .day,
+.future_forecast_down ul li .temperature {
+    display: block;
+}
+
+.future_forecast_down ul li .day {
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.future_forecast_down ul li .temperature {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Future Forecast Section - END */

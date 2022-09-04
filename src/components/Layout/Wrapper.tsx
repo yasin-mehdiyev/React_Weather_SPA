@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { ChildrenProps } from '../../models/types/Common';
+import { WrapperProps } from '../../models/types/Wrapper';
 import classes from "../../styles/Wrapper.module.css";
 
-const Wrapper: FC<ChildrenProps> = ({ children }) => {
+const Wrapper: FC<WrapperProps> = ({ children, bgColor }) => {
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} style={{ backgroundColor: bgColor }}>
         {children}
     </div>
   )
