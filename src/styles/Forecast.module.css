@@ -1,4 +1,3 @@
-
 /* Forecast Section - BEGIN */
 
 .forecast {
@@ -109,6 +108,13 @@
     width: 15%;
     text-align: center;
 }
+
+.future_forecast_down ul li img {
+    height: 50%;
+    background-color: #fff;
+    border-radius: 25px;
+}
+
 
 .future_forecast_down ul li .day,
 .future_forecast_down ul li .temperature {

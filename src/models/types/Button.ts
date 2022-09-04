@@ -1,4 +1,3 @@
-
 export type ButtonProps = {
     content: string,
     disabled: boolean,

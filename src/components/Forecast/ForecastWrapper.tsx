@@ -1,5 +1,9 @@
 import { FC } from 'react'
+
+// Models (Types)
 import { ChildrenProps } from '../../models/types/Common';
+
+// Styles
 import forecastClasses from "../../styles/Forecast.module.css";
 
 const ForecastWrapper: FC<ChildrenProps> = ({ children }) => {

@@ -1,5 +1,9 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
+
+// Models (Types)
 import { ButtonProps } from '../../models/types/Button';
+
+// Styles
 import classes from "../../styles/Button.module.css";
 
 const Button: FC<ButtonProps> = ({ content, onClick, disabled }) => {

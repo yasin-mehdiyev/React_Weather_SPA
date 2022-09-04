@@ -1,4 +1,4 @@
-import React, { FC, Fragment, lazy, Suspense } from 'react';
+import { FC, Fragment, lazy, Suspense } from 'react';
 
 // React Routing Dom Library
 import { Route, Routes } from "react-router-dom";

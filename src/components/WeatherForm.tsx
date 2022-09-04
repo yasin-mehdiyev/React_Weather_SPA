@@ -1,10 +1,16 @@
-import React, { FC, useState } from 'react'
-import Country from './HOC/Country';
-import Region from './HOC/Region';
-import classes from "../styles/Select.module.css";
-import Button from './HOC/Button';
+import { FC, useState } from 'react';
+
+// Redux
 import { useDispatch } from 'react-redux';
 import { fetchForecasts } from '../redux/features/forecast/forecastAction';
+
+// Components
+import Country from './HOC/Country';
+import Region from './HOC/Region';
+import Button from './HOC/Button';
+
+// Styles
+import classes from "../styles/Select.module.css";
 
 const WeatherForm: FC = () => {
     const dispatch = useDispatch<any>();
@@ -21,8 +27,6 @@ const WeatherForm: FC = () => {
 
     const handleSearch = async (e: any) => {
         e.preventDefault();
-        console.log('country: ', country);
-        console.log('region: ', region);
         dispatch(fetchForecasts(region));
         setCountry("");
         setRegion("");
