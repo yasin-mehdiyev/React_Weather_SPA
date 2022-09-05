@@ -1,0 +1,22 @@
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.best_day {
+    margin: 0px;
+}
+
+.best_day li {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.best_day li .content {
+    font-weight: bold;
+}
+
+.best_day li .day {
+    margin-left: 15px;
+}

@@ -13,6 +13,7 @@ import ForecastWrapper from '../../components/Forecast/ForecastWrapper';
 import TodayForecast from '../../components/Forecast/TodayForecast/Index';
 import TodayForecastDetail from '../../components/Forecast/TodayForecast/Detail';
 import FutureForecastList from '../../components/Forecast/FutureForecast/List';
+import BestdaySeller from '../../components/Forecast/BestdaySeller/Index';
 
 // Styles
 import classes from "../../styles/Common.module.css";
@@ -40,25 +41,35 @@ const Forecast: FC = () => {
 
       {
         forecasts && forecasts.data && forecasts.data.length > 0 ? (
-          <section className={`${forecastClasses.forecast} mt-5`}>
-            <Wrapper bgColor="#333">
-              <Row>
-                <div className="col-4">
-                  <TodayForecast forecasts={forecasts} />
-                </div>
+          <>
+            <section className={`${forecastClasses.forecast} mt-5`}>
+              <Wrapper bgColor="#333">
+                <Row>
+                  <div className="col-4">
+                    <TodayForecast forecasts={forecasts} />
+                  </div>
 
-                <div className="col-8">
+                  <div className="col-8">
 
-                  <ForecastWrapper>
-                    <>
-                      <TodayForecastDetail forecasts={forecasts} />
-                      <FutureForecastList forecasts={forecasts} />
-                    </>
-                  </ForecastWrapper>
-                </div>
-              </Row>
-            </Wrapper>
-          </section>
+                    <ForecastWrapper>
+                      <>
+                        <TodayForecastDetail forecasts={forecasts} />
+                        <FutureForecastList forecasts={forecasts} />
+                      </>
+                    </ForecastWrapper>
+                  </div>
+                </Row>
+              </Wrapper>
+            </section>
+
+            <section className="mt-4 mb-4">
+              <Wrapper bgColor="#fff">
+                <Row>
+                  <BestdaySeller forecasts={forecasts} />
+                </Row>
+              </Wrapper>
+            </section>
+          </>
         ) : null
       }
 
