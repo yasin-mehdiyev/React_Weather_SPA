@@ -19,3 +19,18 @@ export const findWeatherPhotoName = (code: string, description: string): string 
     }
     return iconName;
 };
+
+export const bestDayForSale = (forecasts: Array<any>, searchKey: string): any => {
+    let bestDay = undefined;
+
+    if (forecasts && forecasts.length > 0) {
+        for (const item of forecasts) {
+            if (item?.weather?.description?.includes(searchKey)) {
+                bestDay = moment(item?.datetime).format('dddd');
+                break;
+            }
+        }
+    };
+
+    return bestDay;
+};
