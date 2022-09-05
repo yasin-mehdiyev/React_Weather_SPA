@@ -1,5 +1,9 @@
 import { FC } from 'react';
+
+// Styles
 import bestdayClasses from "../../../styles/Bestday.module.css";
+
+// Helpers
 import { bestDayForSale } from '../../../helpers/helperFunctions';
 
 const BestdaySeller: FC<{ forecasts: any }> = ({ forecasts }) => {
